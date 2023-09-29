@@ -1,5 +1,4 @@
 name: ysyyblog
-name: dd299blog
 on:
   push:
     branches:
