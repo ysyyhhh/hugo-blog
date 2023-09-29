@@ -8,18 +8,20 @@ jobs:
     runs-on: ubuntu-20.04
 #    runs-on: macos-latest
     steps:
-      - name: Check out source
+      - uses: actions/checkout@v3
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod      - name: Check out source
         uses: actions/checkout@v2
 
-      - name: Setup hugo
+      - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "latest" # 可以修改为你使用的 Hugo 版本
-#          hugo-version: "v0.119.0" #
-          extended: true # 设置是否需要 extended 版本
+          hugo-version: 'latest'
+          # extended: true
 
       - name: Build
-        run: hugo
+        run: hugo --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
