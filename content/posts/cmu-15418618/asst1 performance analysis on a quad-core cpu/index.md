@@ -194,6 +194,253 @@ Wrote image file mandelbrot-thread.ppm
 
 pro1的目的是为了认识到并行计算的overhead, 以及多线程在计算上也应该是依次交替分配的. 不能简单的平均分配.
 
-而下一章的pro2就是通过向量化+simd指令来减少overhead.
+pro1是通过垂直分割来实现并行计算.
+而向量化是通过水平分割来实现并行计算.
 
 ## program-2-vectorizing-code-using-simd-intrinsics
+
+任务描述：
+使用SIMD指令(CS149intrin.h提供的),来实现clampedExpVector函数.
+
+示例函数:
+
+```C++
+void absVector(float* values, float* output, int N) {
+  __cs149_vec_float x;
+  __cs149_vec_float result;
+  __cs149_vec_float zero = _cs149_vset_float(0.f);
+  __cs149_mask maskAll, maskIsNegative, maskIsNotNegative;
+
+//  Note: Take a careful look at this loop indexing.  This example
+//  code is not guaranteed to work when (N % VECTOR_WIDTH) != 0.
+//  Why is that the case?
+  for (int i=0; i<N; i+=VECTOR_WIDTH) {
+
+    // All ones
+    maskAll = _cs149_init_ones();
+
+    // All zeros
+    maskIsNegative = _cs149_init_ones(0);
+
+    // Load vector of values from contiguous memory addresses
+    _cs149_vload_float(x, values+i, maskAll);               // x = values[i];
+
+    // Set mask according to predicate
+    _cs149_vlt_float(maskIsNegative, x, zero, maskAll);     // if (x < 0) {
+
+    // Execute instruction using mask ("if" clause)
+    _cs149_vsub_float(result, zero, x, maskIsNegative);      //   output[i] = -x;
+
+    // Inverse maskIsNegative to generate "else" mask
+    maskIsNotNegative = _cs149_mask_not(maskIsNegative);     // } else {
+
+    // Execute instruction ("else" clause)
+    _cs149_vload_float(result, values+i, maskIsNotNegative); //   output[i] = x; }
+
+    // Write results back to memory
+    _cs149_vstore_float(output+i, result, maskAll);
+  }
+}
+```
+
+示例函数absVector并不能适用于所有情况,原因如下:
+当n%VECTOR_WIDTH != 0时, 会越界.
+
+### 1&2 实现clampedExpVector函数
+
+```C++
+void clampedExpVector(float *values, int *exponents, float *output, int N)
+{
+
+  //
+  // CS149 STUDENTS TODO: Implement your vectorized version of
+  // clampedExpSerial() here.
+  //
+  // Your solution should work for any value of
+  // N and VECTOR_WIDTH, not just when VECTOR_WIDTH divides N
+  //
+  __cs149_vec_float one, nine;
+  __cs149_vec_int zeroInt, oneInt;
+
+  oneInt = _cs149_vset_int(1);
+  zeroInt = _cs149_vset_int(0);
+  one = _cs149_vset_float(1.f);
+  nine = _cs149_vset_float(9.999999f);
+  for (int i = 0; i < N; i += VECTOR_WIDTH)
+  {
+    __cs149_mask maskAll, maskIsZero, maskIsNotZero;
+    __cs149_vec_float x;
+    __cs149_vec_int y;
+    // All ones
+    maskAll = _cs149_init_ones();
+
+    // All zeros
+    maskIsZero = _cs149_init_ones(0);
+
+    // 防止在最后一次循环时，i+VECTOR_WIDTH超出N
+    if (i + VECTOR_WIDTH > N)
+    {
+      maskAll = _cs149_init_ones(N - i);
+    }
+    // float x = values[i];
+    _cs149_vload_float(x, values + i, maskAll);
+
+    // int y = exponents[i];
+    _cs149_vload_int(y, exponents + i, maskAll);
+
+    // if (y == 0)
+    _cs149_veq_int(maskIsZero, y, zeroInt, maskAll);
+    // {
+    //   output[i] = 1.f;
+    // }
+    _cs149_vstore_float(output + i, one, maskIsZero);
+
+    // else
+    maskIsNotZero = _cs149_mask_not(maskIsZero);
+    // 消除最后一次循环时，i+VECTOR_WIDTH超出N的情况
+    maskIsNotZero = _cs149_mask_and(maskIsNotZero, maskAll);
+
+    {
+      // float result = x;
+      __cs149_vec_float result = x;
+
+      // int count = y - 1;
+      __cs149_vec_int count;
+      _cs149_vsub_int(count, y, oneInt, maskIsNotZero);
+
+      // 哪些count>0
+      __cs149_mask countMark;
+      _cs149_vgt_int(countMark, count, zeroInt, maskIsNotZero);
+
+      // while (count > 0)
+      while (_cs149_cntbits(countMark) > 0)
+      {
+        // result *= x;
+        _cs149_vmult_float(result, result, x, countMark);
+
+        // count--;
+        _cs149_vsub_int(count, count, oneInt, countMark);
+
+        // 哪些count>0
+        _cs149_vgt_int(countMark, count, zeroInt, countMark);
+      }
+
+      // if (result > 9.999999f)
+      __cs149_mask gtNineMask;
+      _cs149_vgt_float(gtNineMask, result, nine, maskIsNotZero);
+
+      // { reult = 9.999999f;}
+      _cs149_vmove_float(result, nine, gtNineMask);
+
+      // output[i] = result;
+
+      _cs149_vstore_float(output + i, result, maskIsNotZero);
+    }
+  }
+}
+```
+
+通过init_ones来防止在有n%vectorWith!=0时 越界.
+
+- 在最开始的maskAll时设置
+- 在取反码后也要设置一次
+
+count循环:
+通过设置一个mask来标记哪些count>0, 从而实现循环.
+
+修改vectorWidth为2, 4, 8, to 16来回答:
+Does the vector utilization increase, decrease or stay the same as VECTOR_WIDTH changes? Why?
+
+vectorWidth为2时, 结果如下:
+****************** Printing Vector Unit Statistics *******************
+Vector Width:              2
+Total Vector Instructions: 162728
+Vector Utilization:        77.0%
+Utilized Vector Lanes:     250653
+Total Vector Lanes:        325456
+
+vectorWidth为4时, 结果如下:
+****************** Printing Vector Unit Statistics *******************
+Vector Width:              3
+Total Vector Instructions: 119440
+Vector Utilization:        72.2%
+Utilized Vector Lanes:     258879
+Total Vector Lanes:        358320
+
+vectorWidth为8时, 结果如下:
+****************** Printing Vector Unit Statistics *******************
+Vector Width:              8
+Total Vector Instructions: 51628
+Vector Utilization:        66.0%
+Utilized Vector Lanes:     272539
+Total Vector Lanes:        413024
+
+vectorWidth为16时, 结果如下:
+****************** Printing Vector Unit Statistics *******************
+Vector Width:              16
+Total Vector Instructions: 26968
+Vector Utilization:        64.2%
+Utilized Vector Lanes:     277188
+Total Vector Lanes:        431488
+
+可以发现, 随着vectorWidth的增加, vectorUtilization也在减少.
+
+原因:
+有多个条件语句,当vectorWidth增加时, 每次在某个条件中不执行的指令也会增加.
+
+### 3 实现arraySumVector
+
+```C++
+float arraySumVector(float *values, int N)
+{
+
+  //
+  // CS149 STUDENTS TODO: Implement your vectorized version of arraySumSerial here
+  //
+
+  __cs149_vec_float sum = _cs149_vset_float(0.f);
+  for (int i = 0; i < N; i += VECTOR_WIDTH)
+  {
+    __cs149_mask maskAll;
+    __cs149_vec_float x;
+    // All ones
+    maskAll = _cs149_init_ones();
+
+    // 防止在最后一次循环时，i+VECTOR_WIDTH超出N
+    if (i + VECTOR_WIDTH > N)
+    {
+      maskAll = _cs149_init_ones(N - i);
+    }
+    // float x = values[i];
+    _cs149_vload_float(x, values + i, maskAll);
+
+    // sum += x;
+    _cs149_vadd_float(sum, sum, x, maskAll);
+  }
+  float result = 0.f;
+  // log2(VECTOR_WIDTH)内解决
+  for (int i = 0; i < log2(VECTOR_WIDTH); i++)
+  {
+    // 使用_cs149_hadd_float函数，将sum中的每两个元素相加
+    // 再使用_cs149_interleave_float函数，将sum中的每两个元素交叉放置
+    // 重复log2(VECTOR_WIDTH)次
+    _cs149_hadd_float(sum, sum);
+    _cs149_interleave_float(sum, sum);
+  }
+  // 将sum中的第一个元素赋值给result
+  result = sum.value[0];
+  return result;
+}
+```
+
+假设VECTOR_WIDTHs始终是N的因子.
+
+可以实现在O(N/VECTOR_WIDTH + log2(VECTOR_WIDTH))的时间内完成计算.
+
+最后的log2实现方式.
+提示中给了两个函数
+hadd: 将每两个元素相加
+interleave: 将每两个元素交叉放置
+
+因此我们可以类似与归并排序的方式,将sum中的每两个元素相加,再将每两个元素交叉放置.
+重复log2(VECTOR_WIDTH)次后,第一个元素就是结果.
