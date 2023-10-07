@@ -1,5 +1,20 @@
-# L2
-
+---
+title: L2
+date: 2023-10-05
+lastmod: 2023-10-07
+author: ['Ysyy']
+categories: ['cmu-15418618']
+tags: ['cmu-15418618']
+description: 
+weight: None
+draft: False
+comments: True
+showToc: True
+TocOpen: True
+hidemeta: False
+disableShare: False
+showbreadcrumbs: True
+---
 ## 并行程序
 
 ```c++

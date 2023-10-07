@@ -1,10 +1,10 @@
 ---
-title: 测试 blog2313
-date: 2023-09-29
+title: 工作学习流(vscode快捷键)
+date: 2023-10-07
 lastmod: 2023-10-07
 author: ['Ysyy']
-categories: ['c++']
-tags: ['c++']
+categories: ['tools']
+tags: ['tools']
 description: 
 weight: None
 draft: False
@@ -15,4 +15,11 @@ hidemeta: False
 disableShare: False
 showbreadcrumbs: True
 ---
-![image-20230929193148007](img/image-20230929193148007.png)
+## view
+
+
+
+
+## Run
+
+Run python file in terminal: `Ctrl + F5`

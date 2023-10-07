@@ -1,8 +1,28 @@
+---
+title: 
+date: 2023-10-06
+lastmod: 2023-10-07
+author: ['Ysyy']
+categories: ['cmu-15418618']
+tags: ['cmu-15418618']
+description: 
+weight: None
+draft: False
+comments: True
+showToc: True
+TocOpen: True
+hidemeta: False
+disableShare: False
+showbreadcrumbs: True
+---
 [参考](https://www.cnblogs.com/kalicener/p/16824312.html)
 
 [任务](https://github.com/stanford-cs149/asst1)
 
-## [Program 1: Parallel Fractal Generation Using Threads (20 points)](https://github.com/stanford-cs149/asst1#program-1-parallel-fractal-generation-using-threads-20-points)
+
+
+提示:
+需要先看CMU15-418/CS149的L2再完成Pro1
 
 任务描述:
 用多线程画mandelbrot fractal.
@@ -199,6 +219,7 @@ pro1是通过垂直分割来实现并行计算.
 
 ## program-2-vectorizing-code-using-simd-intrinsics
 
+前提: L2
 任务描述：
 使用SIMD指令(CS149intrin.h提供的),来实现clampedExpVector函数.
 
@@ -444,3 +465,7 @@ interleave: 将每两个元素交叉放置
 
 因此我们可以类似与归并排序的方式,将sum中的每两个元素相加,再将每两个元素交叉放置.
 重复log2(VECTOR_WIDTH)次后,第一个元素就是结果.
+
+## program-3
+
+前提: L3
