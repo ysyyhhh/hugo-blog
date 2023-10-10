@@ -1,7 +1,7 @@
 ---
 title: 测试 blog2313
 date: 2023-09-29
-lastmod: 2023-10-09
+lastmod: 2023-10-10
 author: ['Ysyy']
 categories: ['c++']
 tags: ['c++']
