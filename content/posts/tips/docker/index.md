@@ -15,6 +15,8 @@ hidemeta: False
 disableShare: False
 showbreadcrumbs: True
 ---
+安装时出现选项
+
 ```Dockerfile
 # RUN apt-get install libglib2.0-dev -y
 # 由于安装libglib2.0-dev的时候，bash会有交互操作叫你选择对应的时区，在docker build的时候没有交互的，所以需要加上DEBIAN_FRONTEND="noninteractive"
