@@ -1,7 +1,7 @@
 ---
 title: Abstraction vs implementation
 date: 2023-10-08
-lastmod: 2023-10-10
+lastmod: 2023-10-11
 author: ['Ysyy']
 categories: ['cmu-15418618']
 tags: ['cmu-15418618']
