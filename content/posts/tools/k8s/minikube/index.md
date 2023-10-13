@@ -1,10 +1,10 @@
 ---
-title: 测试 blog2313
-date: 2023-09-29
+title: minikube使用
+date: 2023-10-13
 lastmod: 2023-10-13
 author: ['Ysyy']
-categories: ['c++']
-tags: ['c++']
+categories: ['tools']
+tags: ['k8s']
 description: 
 weight: None
 draft: False
@@ -15,4 +15,4 @@ hidemeta: False
 disableShare: False
 showbreadcrumbs: True
 ---
-![image-20230929193148007](img/image-20230929193148007.png)
+使用
