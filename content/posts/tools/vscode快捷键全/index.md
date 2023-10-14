@@ -1,7 +1,7 @@
 ---
 title: 工作学习流(vscode快捷键)
-date: 2023-10-07
-lastmod: 2023-10-13
+date: 2023-10-14
+lastmod: 2023-10-14
 author: ['Ysyy']
 categories: ['tools']
 tags: ['tools']
@@ -15,10 +15,11 @@ hidemeta: False
 disableShare: False
 showbreadcrumbs: True
 ---
+markdown 快捷键
+
+删除线: `alt + s`
+
 ## view
-
-
-
 
 ## Run
 

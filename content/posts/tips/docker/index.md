@@ -1,7 +1,7 @@
 ---
 title: 记把深度学习项目装入docker
 date: 2023-10-11
-lastmod: 2023-10-13
+lastmod: 2023-10-14
 author: ['Ysyy']
 categories: ['tips']
 tags: ['tips']
