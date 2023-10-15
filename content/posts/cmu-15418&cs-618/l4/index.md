@@ -1,7 +1,7 @@
 ---
 title: L4 Parallel Programing basics
-date: 2023-10-14
-lastmod: 2023-10-14
+date: 2023-10-15
+lastmod: 2023-10-15
 author: ['Ysyy']
 categories: ['cmu-15418&cs-618']
 tags: ['cmu-15418&cs-618']
