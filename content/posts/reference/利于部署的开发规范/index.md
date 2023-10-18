@@ -1,7 +1,7 @@
 ---
 title: 利于部署的开发规范手册
-date: 2023-10-16
-lastmod: 2023-10-17
+date: 2023-10-18
+lastmod: 2023-10-18
 author: ['Ysyy']
 categories: ['reference']
 tags: ['reference']
@@ -177,6 +177,7 @@ CMD ["pipenv", "run", "python", "main.py"]
 
 ### SpringBoot项目
 
+[参考](https://developer.aliyun.com/article/65274)
 这里都以maven作为依赖管理工具。
 
 主要保留pom.xml文件
@@ -184,15 +185,30 @@ CMD ["pipenv", "run", "python", "main.py"]
 dockerfile示例
 
 ```dockerfile
+# 第一阶段: 构建jar包
 FROM maven:3.6.3-jdk-8-slim AS build
 
 WORKDIR /app
 
+COPY pom.xml ./
+
+# 设置国内源
+RUN mvn -B -e -C -T 1C org.apache.maven.plugins:maven-dependency-plugin:3.1.2:go-offline
+
 # 拷贝项目文件
 COPY . .
 
-# 安装依赖
-RUN mvn clean package -Dmaven.test.skip=true
+# 构建jar包
+RUN mvn clean install -DskipTests
+
+
+# 第二阶段: 运行jar包
+FROM openjdk:8-jdk-alpine
+
+WORKDIR /app
+
+# 拷贝第一阶段构建的jar包
+COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar ./
 
 # 运行项目
 CMD ["java", "-jar", "target/demo-0.0.1-SNAPSHOT.jar"]
