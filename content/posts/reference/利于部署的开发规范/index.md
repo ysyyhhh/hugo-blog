@@ -1,7 +1,7 @@
 ---
 title: 利于部署的开发规范手册
-date: 2023-10-18
-lastmod: 2023-10-18
+date: 2023-10-19
+lastmod: 2023-10-20
 author: ['Ysyy']
 categories: ['reference']
 tags: ['reference']
@@ -24,6 +24,7 @@ showbreadcrumbs: True
 - 管理依赖库
 - 使用docker
 - 端口、ip地址等使用环境变量
+- 路径不能写死！尤其是绝对路径和根目录等，需要放在环境变量中！！
 
 ## 后端
 
