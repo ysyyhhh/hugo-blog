@@ -1,7 +1,7 @@
 ---
 title: docker相关技巧
-date: 2023-10-21
-lastmod: 2023-10-21
+date: 2023-10-23
+lastmod: 2023-10-23
 author: ['Ysyy']
 categories: ['tips']
 tags: ['tips']
@@ -24,7 +24,6 @@ showbreadcrumbs: True
 # 由于安装libglib2.0-dev的时候，bash会有交互操作叫你选择对应的时区，在docker build的时候没有交互的，所以需要加上DEBIAN_FRONTEND="noninteractive"
 RUN DEBIAN_FRONTEND="noninteractive" apt -y install libglib2.0-dev
 
-
 ```
 
 ## docker清理
@@ -42,8 +41,14 @@ docker volume prune
 # 删除所有未使用的镜像
 docker image prune -a
 
+# 删除缓存
+docker builder prune
+
+
 # 查看当前占用的空间
 docker system df
+
+
 ```
 
 对wsl2的盘进行压缩
@@ -57,9 +62,51 @@ wsl --list -v
 # 使用diskpart压缩
 diskpart
 # open window Diskpart
-select vdisk file="C:\Users\<你的用户名>\AppData\Local\Docker\wsl\data\ext4.vhdx"
+select vdisk file="D:\ubuntu\wsl\docker-desktop-data\ext4.vhdx"
 attach vdisk readonly
 compact vdisk
 detach vdisk
 exit
+```
+
+## docker中安装conda
+
+```Dockerfile
+
+# 安装conda
+
+RUN apt-get install -y wget
+
+# yhyu13 : donwload anaconda package & install
+RUN wget "https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh" 
+
+RUN sh Anaconda3-2023.03-1-Linux-x86_64.sh -b -p /opt/conda
+
+# RUN rm /anaconda.sh 
+
+RUN ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh
+
+RUN echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc
+
+# yhyu13 : add conda to path  
+ENV PATH /opt/conda/bin:/opt/conda/condabin:$PATH
+```
+
+## docker-compose 使用gpu
+
+```yaml
+version: '3.7'
+services:
+  pytorch:
+    build: .
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    volumes:
+      - .:/workspace
+    ports:
+      - "8888:8888"
+      - "6006:6006"
+    command: bash -c "jupyter notebook --ip
 ```
