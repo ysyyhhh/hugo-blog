@@ -1,5 +1,25 @@
+<<<<<<< HEAD
 # docker相关技巧
 
+=======
+---
+title: docker相关技巧
+date: 2023-10-24
+lastmod: 2023-10-24
+author: ['Ysyy']
+categories: ['tips']
+tags: ['tips']
+description: 
+weight: None
+draft: False
+comments: True
+showToc: True
+TocOpen: True
+hidemeta: False
+disableShare: False
+showbreadcrumbs: True
+---
+>>>>>>> 058a5313c3c0d23db51c00c464baee19dff9ec56
 ## 记把深度学习项目装入docker
 
 安装时出现选项
@@ -129,4 +149,8 @@ wsl --import Ubuntu-20.04 D:\ubuntu\wsl\Ubuntu-20.04 D:\ubuntu\wsl\Ubuntu-20.04.
 
 # 7. 查看是否导入成功
 wsl --list -v
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 058a5313c3c0d23db51c00c464baee19dff9ec56

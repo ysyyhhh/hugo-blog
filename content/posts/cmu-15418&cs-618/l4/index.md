@@ -1,6 +1,26 @@
+<<<<<<< HEAD
 
 # L4 Parallel Programing basics
 
+=======
+---
+title: L4 Parallel Programing basics
+date: 2023-10-15
+lastmod: 2023-10-24
+author: ['Ysyy']
+categories: ['cmu-15418&cs-618']
+tags: ['cmu-15418&cs-618']
+description: 
+weight: None
+draft: False
+comments: True
+showToc: True
+TocOpen: True
+hidemeta: False
+disableShare: False
+showbreadcrumbs: True
+---
+>>>>>>> 058a5313c3c0d23db51c00c464baee19dff9ec56
 主要用三种方式实现并行程序(没有进行真正的优化)
 
 例子 n-body simulation
