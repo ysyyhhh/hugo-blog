@@ -1,20 +1,6 @@
----
-title: L4 Parallel Programing basics
-date: 2023-10-15
-lastmod: 2023-10-23
-author: ['Ysyy']
-categories: ['cmu-15418&cs-618']
-tags: ['cmu-15418&cs-618']
-description: 
-weight: None
-draft: False
-comments: True
-showToc: True
-TocOpen: True
-hidemeta: False
-disableShare: False
-showbreadcrumbs: True
----
+
+# L4 Parallel Programing basics
+
 主要用三种方式实现并行程序(没有进行真正的优化)
 
 例子 n-body simulation
@@ -183,3 +169,5 @@ barrier还是有点笨重, 这会强制所有线程到一个起跑线
 所以需要分奇偶来发送
 
 ![](img/2023-10-14-21-07-24.png)
+
+

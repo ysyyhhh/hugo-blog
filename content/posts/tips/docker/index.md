@@ -1,20 +1,5 @@
----
-title: docker相关技巧
-date: 2023-10-23
-lastmod: 2023-10-23
-author: ['Ysyy']
-categories: ['tips']
-tags: ['tips']
-description: 
-weight: None
-draft: False
-comments: True
-showToc: True
-TocOpen: True
-hidemeta: False
-disableShare: False
-showbreadcrumbs: True
----
+# docker相关技巧
+
 ## 记把深度学习项目装入docker
 
 安装时出现选项
@@ -109,4 +94,39 @@ services:
       - "8888:8888"
       - "6006:6006"
     command: bash -c "jupyter notebook --ip
+```
+
+## wsl 盘迁移到非系统盘
+
+一般情况下 wsl盘的位置在
+`C:\Users\<用户名>\AppData\Local\Docker\wsl`
+
+docker的盘在
+`C:\Users\<用户名>\AppData\Local\Docker\wsl\data`
+
+```bash
+
+# 1. 停止wsl
+wsl --shutdown
+
+# 2. 查看wsl状态
+wsl --list -v
+# 可以看到docker有两个wsl，一个是docker-desktop-data，一个是docker-desktop
+# 只需要迁移docker-desktop-data即可,另一个很小
+
+# 3. 迁移wsl
+wsl --export Ubuntu-20.04 D:\ubuntu\wsl\Ubuntu-20.04.tar
+
+# 4. 删除wsl
+wsl --unregister Ubuntu-20.04
+
+
+# 5. 查看是否删除成功
+wsl --list -v
+
+# 6. 导入wsl
+wsl --import Ubuntu-20.04 D:\ubuntu\wsl\Ubuntu-20.04 D:\ubuntu\wsl\Ubuntu-20.04.tar --version 2
+
+# 7. 查看是否导入成功
+wsl --list -v
 ```

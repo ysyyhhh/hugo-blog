@@ -1,20 +1,8 @@
----
-title: MySql常用命令
-date: 2023-10-11
-lastmod: 2023-10-23
-author: ['Ysyy']
-categories: ['tools']
-tags: ['sql']
-description: 
-weight: None
-draft: False
-comments: True
-showToc: True
-TocOpen: True
-hidemeta: False
-disableShare: False
-showbreadcrumbs: True
----
+
+
+
+# MySql常用命令
+
 ##### 修改用户密码
 
 ```

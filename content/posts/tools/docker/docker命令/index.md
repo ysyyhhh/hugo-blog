@@ -1,20 +1,5 @@
----
-title: Docker命令
-date: 2023-10-11
-lastmod: 2023-10-23
-author: ['Ysyy']
-categories: ['tools']
-tags: ['docker']
-description: 
-weight: None
-draft: False
-comments: True
-showToc: True
-TocOpen: True
-hidemeta: False
-disableShare: False
-showbreadcrumbs: True
----
+# Docker命令
+
 ## 1.镜像相关
 
 ```shell
@@ -100,5 +85,13 @@ docker stats [选项] <容器名>
 
 # 查看容器端口映射
 docker port [选项] <容器名>
+
+```
+
+## docker-compose
+
+```shell
+# 构建
+docker-compose b
 
 ```

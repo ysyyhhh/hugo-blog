@@ -1,25 +1,8 @@
----
-title: 
-date: 2023-10-09
-lastmod: 2023-10-23
-author: ['Ysyy']
-categories: ['cmu-15418&cs-618']
-tags: ['cmu-15418&cs-618']
-description: 
-weight: None
-draft: False
-comments: True
-showToc: True
-TocOpen: True
-hidemeta: False
-disableShare: False
-showbreadcrumbs: True
----
 [参考](https://www.cnblogs.com/kalicener/p/16824312.html)
 
 [任务](https://github.com/stanford-cs149/asst1)
 
-
+## [Program 1: Parallel Fractal Generation Using Threads (20 points)](https://github.com/stanford-cs149/asst1#program-1-parallel-fractal-generation-using-threads-20-points)
 
 提示:
 需要先看CMU15-418/CS149的L2再完成Pro1
@@ -576,3 +559,10 @@ Even though saxpy loads one element from X, one element from Y, and writes one e
 
 
 当程序写入结果的一个元素时，它首先将包含这个元素的缓存行提取到缓存中。这需要一个内存操作。然后，当不需要这个缓存行时，它将从缓存中闪现出来，这需要另一个内存操作。
+
+
+
+
+
+
+

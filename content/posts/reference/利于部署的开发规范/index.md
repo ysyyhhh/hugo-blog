@@ -1,20 +1,6 @@
----
-title: 利于部署的开发规范手册
-date: 2023-10-19
-lastmod: 2023-10-23
-author: ['Ysyy']
-categories: ['reference']
-tags: ['reference']
-description: 
-weight: None
-draft: False
-comments: True
-showToc: True
-TocOpen: True
-hidemeta: False
-disableShare: False
-showbreadcrumbs: True
----
+
+# 利于部署的开发规范手册
+
 本规范用于在开发过程中，使得项目能够更好的部署，更好的维护。
 
 使用时间: 当项目开始开发时，就应该遵守本规范。

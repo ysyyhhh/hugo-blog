@@ -1,20 +1,5 @@
----
-title: vim的使用
-date: 2023-10-17
-lastmod: 2023-10-23
-author: ['Ysyy']
-categories: ['tools']
-tags: ['vim']
-description: 
-weight: None
-draft: False
-comments: True
-showToc: True
-TocOpen: True
-hidemeta: False
-disableShare: False
-showbreadcrumbs: True
----
+# vim的使用
+
 ## 光标移动
 
 h: 左移一个字符
