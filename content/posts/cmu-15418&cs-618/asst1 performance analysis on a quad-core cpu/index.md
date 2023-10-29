@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-=======
----
-title: 
-date: 2023-10-09
-lastmod: 2023-10-24
-author: ['Ysyy']
-categories: ['cmu-15418&cs-618']
-tags: ['cmu-15418&cs-618']
-description: 
-weight: None
-draft: False
-comments: True
-showToc: True
-TocOpen: True
-hidemeta: False
-disableShare: False
-showbreadcrumbs: True
----
->>>>>>> 058a5313c3c0d23db51c00c464baee19dff9ec56
 [参考](https://www.cnblogs.com/kalicener/p/16824312.html)
 
 [任务](https://github.com/stanford-cs149/asst1)

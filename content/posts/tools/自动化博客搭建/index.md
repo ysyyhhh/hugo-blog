@@ -1,25 +1,5 @@
-<<<<<<< HEAD
 # 用Hugo + Github Pages/Action + py + 任务计划程序 搭建 全自动化markdown笔记转博客
 
-=======
----
-title: 用Hugo + Github Pages/Action + py + 任务计划程序 搭建 全自动化markdown笔记转博客
-date: 2023-09-29
-lastmod: 2023-10-24
-author: ['Ysyy']
-categories: ['tools']
-tags: ['tools']
-description: 
-weight: None
-draft: False
-comments: True
-showToc: True
-TocOpen: True
-hidemeta: False
-disableShare: False
-showbreadcrumbs: True
----
->>>>>>> 058a5313c3c0d23db51c00c464baee19dff9ec56
 #### TL;DR
 
 > 1. 背景: 已使用nextcloud和typora写笔记

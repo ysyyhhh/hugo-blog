@@ -1,25 +1,5 @@
-<<<<<<< HEAD
 # vim的使用
 
-=======
----
-title: vim的使用
-date: 2023-10-17
-lastmod: 2023-10-24
-author: ['Ysyy']
-categories: ['tools']
-tags: ['vim']
-description: 
-weight: None
-draft: False
-comments: True
-showToc: True
-TocOpen: True
-hidemeta: False
-disableShare: False
-showbreadcrumbs: True
----
->>>>>>> 058a5313c3c0d23db51c00c464baee19dff9ec56
 ## 光标移动
 
 h: 左移一个字符
