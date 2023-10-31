@@ -1,5 +1,37 @@
 # Docker命令
 
+## 安装docker
+
+```shell
+sudo apt -y update
+
+sudo apt -y upgrade
+
+sudo apt -y full-upgrade
+
+# 安装依赖
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common gnupg lsb-release
+
+# 添加官方GPG密钥
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+#添加仓库
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# 更新apt
+sudo apt -y update
+
+# 安装docker
+sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+# 安装docker-compose
+
+sudo apt install docker-compose
+
+
+
+```
+
 ## 1.镜像相关
 
 ```shell
@@ -86,12 +118,30 @@ docker stats [选项] <容器名>
 # 查看容器端口映射
 docker port [选项] <容器名>
 
+
+# 导出容器中的文件
+docker cp [选项] <容器名>:<容器内路径> <宿主机路径>
+# 选项: -a, --archive=false  # 归档模式(默认)
+#       -L, --follow-link=false  # 总是解析符号链接
+#       -d, --device=false  # 复制字符和块设备
+#       -r, --recursive=false  # 递归复制整个目录
+#       -p, --pause=true  # 暂停容器中的所有进程
+
+
 ```
 
 ## docker-compose
 
 ```shell
-# 构建
-docker-compose b
+# 启动命令
+docker-compose up [选项] [服务名]
+
+# 选项
+# -d 后台运行
+# --build 构建镜像
+# --force-recreate 强制重新创建容器
+# --no-deps 不启动依赖的服务
+# --no-recreate 不重新创建容器
+
 
 ```
