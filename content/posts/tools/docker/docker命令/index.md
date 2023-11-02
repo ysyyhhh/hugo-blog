@@ -130,6 +130,67 @@ docker cp [选项] <容器名>:<容器内路径> <宿主机路径>
 
 ```
 
+### docker 检查与排错
+
+```shell
+docker logs [选项] <容器名>
+# 选项: -f, --follow=false  # 跟踪日志输出
+#       --since=""  # 显示自某个timestamp之后的日志，或相对时间，如42m（即42分钟）
+#       --tail="all"  # 从日志末尾显示多少行日志， 默认是all
+#       -t, --timestamps=false  # 显示时间戳
+#       --until=""  # 显示自某个timestamp之前的日志，或相对时间，如42m（即42分钟）
+
+# 查看容器占用
+docker stats [选项] <容器名>
+# 选项: --all=false  # 显示所有容器（默认显示运行中的容器）
+#       --format=""  # 使用Go模板显示
+#      --no-stream=false  # 不显示实时流容器的统计信息
+#      --no-trunc=false  # 不截断输出
+
+
+# 停止所有容器
+docker stop $(docker ps -a -q)
+
+
+# 移除所有容器
+docker rm $(docker ps -a -q)
+
+# 移除所有镜像
+docker image rmi $(docker images -q)
+
+
+# 清空docker中所有的东西
+docker system prune -a
+
+# 清空缓存
+docker system prune -f
+
+# 清空未使用的镜像
+docker image prune -a
+
+# 清空未使用的容器
+docker container prune
+
+# 清空未使用的卷
+docker volume prune
+
+# 清空未使用的网络
+docker network prune
+
+# 清空未使用的构建缓存
+docker builder prune
+
+# 清空未使用的数据
+docker system prune -a --volumes
+
+# 清空所有未使用的数据
+docker system prune -a --volumes --force
+
+
+
+
+```
+
 ## docker-compose
 
 ```shell
