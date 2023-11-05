@@ -75,7 +75,10 @@ docker run [选项] <镜像名> [命令]
 #   on-failure[:max-retries] 容器故障退出（返回值非零）时重启，最多重启max-retries次
 #   always 容器退出时总是重启
 #   unless-stopped 容器退出时总是重启，但是不考虑在Docker守护进程启动时就已经停止了的容器
+# --env-file 从指定文件读入环境变量
 
+# eg:
+# docker run -d -p 8080:8080 --name tomcat tomcat:8.5.51 --env-file ./env.list
 
 
 # 查看容器
@@ -205,4 +208,4 @@ docker-compose up [选项] [服务名]
 # --no-recreate 不重新创建容器
 
 
-```
+`
