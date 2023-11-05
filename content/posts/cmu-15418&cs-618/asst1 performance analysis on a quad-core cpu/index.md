@@ -1,6 +1,6 @@
 ---
-title: 
-date: 2023-10-09
+title: asst1
+date: 2023-11-05
 lastmod: 2023-11-05
 author: ['Ysyy']
 categories: ['']
@@ -19,7 +19,7 @@ showbreadcrumbs: True
 
 [任务](https://github.com/stanford-cs149/asst1)
 
-
+## [Program 1: Parallel Fractal Generation Using Threads (20 points)](https://github.com/stanford-cs149/asst1#program-1-parallel-fractal-generation-using-threads-20-points)
 
 提示:
 需要先看CMU15-418/CS149的L2再完成Pro1
@@ -471,16 +471,18 @@ interleave: 将每两个元素交叉放置
 前提: L3
 
 ### part1 ISPC basic
+
 任务:学习ISPC基本概念和编写.
 
 ISPC是一种编译器,可以将C代码编译为SIMD指令.
 
 ### part2 ISPC task
+
 任务描述:
 观察ISPCtask执行的结果
 
-
 #### 1
+
 启动mandelbrot_ispc --tasks
 
 结果:
@@ -496,36 +498,34 @@ Wrote image file mandelbrot-task-ispc.ppm
 因为设置了两个task所以大约是两倍的加速比 对于 ISPC
 
 #### 2
+
 修改mandelbrot_ispc_withtasks()中的task数量,
 you should be able to achieve performance that exceeds the sequential version of the code by over 32 times!
-How did you determine how many tasks to create? 
+How did you determine how many tasks to create?
 Why does the number you chose work best?
 
 根据机器的最大超线程数量设置
 我设置了16个task, 因为我的机器是4核8线程, 16个task可以使得每个线程都有两个task.
 
-
 #### 3
+
 what happens when you launch 10,000 ISPC tasks? What happens when you launch 10,000 threads?
 
 向量加速
 
-
-
-
 思考题:
-Q: Why are there two different mechanisms (foreach and launch) for expressing independent, parallelizable work to the ISPC system? 
+Q: Why are there two different mechanisms (foreach and launch) for expressing independent, parallelizable work to the ISPC system?
 A:foreach是将一个任务分配给多个线程,而launch是将多个任务分配给多个线程.
 
 Q: Couldn't the system just partition the many iterations of foreach across all cores and also emit the appropriate SIMD code for the cores?
-A: 
-
-
+A:
 
 ## program-4 Iterative sqrt (15 points)
+
 用sqrt复习ISPC的基本概念
 
-### 1 
+### 1
+
 运行结果:
 [sqrt serial]:          [1316.793] ms
 [sqrt ispc]:            [301.134] ms
@@ -546,8 +546,8 @@ A:
                                 (5.60x speedup from ISPC)
                                 (30.39x speedup from task ISPC)
 
-
 ### 3
+
 构造数组使得加速比最小.
 
 全部数为1
@@ -557,8 +557,6 @@ A:
 结果:
                                 (2.50x speedup from ISPC)
                                 (3.08x speedup from task ISPC)
-
-
 
 ## program-5 BLAS saxpy (10 points)
 
@@ -572,7 +570,7 @@ A:
 因为需要访问内存所以加速比不高.
 
 ### 2
-Even though saxpy loads one element from X, one element from Y, and writes one element to result the multiplier by 4 is correct. Why is this the case? (Hint, think about how CPU caches work.)
 
+Even though saxpy loads one element from X, one element from Y, and writes one element to result the multiplier by 4 is correct. Why is this the case? (Hint, think about how CPU caches work.)
 
 当程序写入结果的一个元素时，它首先将包含这个元素的缓存行提取到缓存中。这需要一个内存操作。然后，当不需要这个缓存行时，它将从缓存中闪现出来，这需要另一个内存操作。
