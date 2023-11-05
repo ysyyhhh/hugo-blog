@@ -1,5 +1,20 @@
-# docker相关技巧
-
+---
+title: docker相关技巧
+date: 2023-10-24
+lastmod: 2023-11-05
+author: ['Ysyy']
+categories: ['']
+tags: ['tips']
+description: 
+weight: None
+draft: False
+comments: True
+showToc: True
+TocOpen: True
+hidemeta: False
+disableShare: False
+showbreadcrumbs: True
+---
 ## 记把深度学习项目装入docker
 
 安装时出现选项

@@ -1,5 +1,20 @@
-# L5 Work distribution and scheduling
-
+---
+title: L5 Work distribution and scheduling
+date: 2023-10-16
+lastmod: 2023-11-05
+author: ['Ysyy']
+categories: ['']
+tags: ['cmu-15418&cs-618']
+description: 
+weight: None
+draft: False
+comments: True
+showToc: True
+TocOpen: True
+hidemeta: False
+disableShare: False
+showbreadcrumbs: True
+---
 ## 三种分配策略的总结
 
 ### 静态分配

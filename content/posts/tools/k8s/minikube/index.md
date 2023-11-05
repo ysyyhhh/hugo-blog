@@ -1,5 +1,20 @@
-# minikube
-
+---
+title: minikube
+date: 2023-10-31
+lastmod: 2023-11-05
+author: ['Ysyy']
+categories: ['']
+tags: ['k8s']
+description: 
+weight: None
+draft: False
+comments: True
+showToc: True
+TocOpen: True
+hidemeta: False
+disableShare: False
+showbreadcrumbs: True
+---
 使用
 
 进入pods的容器
@@ -107,4 +122,4 @@ spec:
                 name: fuzzs-scene-sim-test
                 port:
                   number: 8089
-```
+```

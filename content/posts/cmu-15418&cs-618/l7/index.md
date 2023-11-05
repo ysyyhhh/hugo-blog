@@ -1,5 +1,20 @@
-# L7
-
+---
+title: L7
+date: 2023-10-18
+lastmod: 2023-11-05
+author: ['Ysyy']
+categories: ['']
+tags: ['cmu-15418&cs-618']
+description: 
+weight: None
+draft: False
+comments: True
+showToc: True
+TocOpen: True
+hidemeta: False
+disableShare: False
+showbreadcrumbs: True
+---
 GPU
 
 ## 图形渲染

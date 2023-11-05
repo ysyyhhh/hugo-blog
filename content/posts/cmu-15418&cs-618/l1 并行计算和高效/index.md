@@ -1,5 +1,20 @@
-# Why parallelism? Why efficiency?
-
+---
+title: Why parallelism? Why efficiency?
+date: 2023-10-05
+lastmod: 2023-11-05
+author: ['Ysyy']
+categories: ['']
+tags: ['cmu-15418&cs-618']
+description: 
+weight: None
+draft: False
+comments: True
+showToc: True
+TocOpen: True
+hidemeta: False
+disableShare: False
+showbreadcrumbs: True
+---
 ## Parallelism
 
 加速比 Speed up 是指：

@@ -1,6 +1,20 @@
-
-# Modern C++
-
+---
+title: Modern C++
+date: 2023-10-31
+lastmod: 2023-11-05
+author: ['Ysyy']
+categories: ['']
+tags: ['c++']
+description: 
+weight: None
+draft: False
+comments: True
+showToc: True
+TocOpen: True
+hidemeta: False
+disableShare: False
+showbreadcrumbs: True
+---
 ## lambda表达式
 
 描述:
