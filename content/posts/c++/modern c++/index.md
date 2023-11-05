@@ -1,6 +1,6 @@
 ---
 title: Modern C++
-date: 2023-10-31
+date: 2023-11-05
 lastmod: 2023-11-05
 author: ['Ysyy']
 categories: ['']
