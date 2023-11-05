@@ -207,13 +207,18 @@ def adjust(dir):
 
 
 def sync():
+    print("sync start")
+    print("root_path", root_path)
+    print("dst_path", dst_path)
+    print("src_path", src_path)
     os.chdir(root_path)
     # 当文件已存在时，无法创建该文件。: './content/posts/'
 
     # 如果文件夹存在，删除
     if os.path.exists(dst_path):
         shutil.rmtree(dst_path)
-
+    # print(result)
+    # return
     # git中也要删除
     os.system("git rm -r ./content/posts/")
 
