@@ -17,6 +17,8 @@ import shutil
 import yaml
 import datetime
 
+from config import get_setting
+
 
 def load_yaml():
     """
@@ -36,11 +38,11 @@ def load_yaml():
 head = load_yaml()
 # print(head)
 
-root_path = "D:/program_about/hugo/hugo-blog"
+root_path = get_setting().root_path
 
 dst_path = root_path + "/content/posts/"
 
-src_path = "D:/nextcloud/笔记/"
+src_path = get_setting().blog_path
 
 
 def create_img_index(root, name):
@@ -81,6 +83,8 @@ class Article:
                 # 删除content中的这一行
                 content = content.replace(line, "", 1)
                 break
+        if title == "":
+            title = self.path.split("/")[-1].split(".")[0]
         self.content = content.strip()
         return title.strip()
 
@@ -171,6 +175,7 @@ def adjust_md(root, name):
 
 
 def adjust(dir):
+    print("adjust", dir)
     os.chdir(dir)
     """
     将所有下面的格式
@@ -206,8 +211,8 @@ def sync():
     # 当文件已存在时，无法创建该文件。: './content/posts/'
 
     # 如果文件夹存在，删除
-    if os.path.exists("./content/posts/"):
-        shutil.rmtree("./content/posts/")
+    if os.path.exists(dst_path):
+        shutil.rmtree(dst_path)
 
     # git中也要删除
     os.system("git rm -r ./content/posts/")
@@ -215,7 +220,7 @@ def sync():
     shutil.copytree(src_path, dst_path)
 
     # 把所有文件夹和文件的名称大写转换为小写
-    os.chdir(dst_path)
+    os.chdir("./content/posts/")
     for root, dirs, files in os.walk("."):
         for name in files:
             new_name = name.lower()
@@ -227,7 +232,7 @@ def sync():
     adjust(dst_path)
     # 上传到git
 
-    os.chdir("D:/program_about/hugo/hugo-blog")
+    os.chdir(root_path)
     os.system("git add ./content/posts/")
     os.system('git commit -m "update"')
     os.system("git push")
