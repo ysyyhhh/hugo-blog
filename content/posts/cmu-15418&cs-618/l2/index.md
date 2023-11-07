@@ -1,7 +1,7 @@
 ---
 title: L2
 date: 2023-11-05
-lastmod: 2023-11-06
+lastmod: 2023-11-07
 author: ['Ysyy']
 categories: ['']
 tags: ['cmu-15418&cs-618']
