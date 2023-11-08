@@ -1,7 +1,7 @@
 ---
 title: docker相关技巧
-date: 2023-11-06
-lastmod: 2023-11-07
+date: 2023-11-08
+lastmod: 2023-11-08
 author: ['Ysyy']
 categories: ['']
 tags: ['tips']
@@ -144,4 +144,33 @@ wsl --import Ubuntu-20.04 D:\ubuntu\wsl\Ubuntu-20.04 D:\ubuntu\wsl\Ubuntu-20.04.
 
 # 7. 查看是否导入成功
 wsl --list -v
+```
+
+## docker 中设置特定版本的python
+
+```shell
+
+
+# 创建一个基础镜像 
+FROM ubuntu:20.04
+
+# 重置apt-get
+RUN rm -rf /etc/apt/sources.list
+
+# 安装conda
+# yhyu13 : install additional packages
+# 设置apt的源为tsinghua镜像源
+RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
+
+RUN apt-get update && apt-get install -y curl wget
+
+# 安装conda
+RUN curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+    && bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda \
+    && rm Miniconda3-latest-Linux-x86_64.sh
+
+# 创建conda环境并安装python
+RUN /opt/conda/bin/conda create -n py38 python=3.8.5
+ENV PATH /opt/conda/envs/py38/bin:$PATH
+
 ```
