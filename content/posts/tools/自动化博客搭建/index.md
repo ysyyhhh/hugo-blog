@@ -1,7 +1,7 @@
 ---
 title: 用Hugo + Github Pages/Action + py + 任务计划程序 搭建 全自动化markdown笔记转博客
 date: 2023-09-29
-lastmod: 2023-11-11
+lastmod: 2023-11-12
 author: ['Ysyy']
 categories: ['']
 tags: ['tools']

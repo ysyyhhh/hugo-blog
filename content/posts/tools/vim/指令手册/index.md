@@ -1,7 +1,7 @@
 ---
 title: vim的使用
 date: 2023-10-17
-lastmod: 2023-11-11
+lastmod: 2023-11-12
 author: ['Ysyy']
 categories: ['']
 tags: ['vim']
