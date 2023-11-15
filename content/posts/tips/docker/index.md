@@ -1,6 +1,6 @@
 ---
 title: docker相关技巧
-date: 2023-11-10
+date: 2023-11-15
 lastmod: 2023-11-15
 author: ['Ysyy']
 categories: ['']
@@ -174,22 +174,21 @@ RUN /opt/conda/bin/conda create -n py38 python=3.8.5
 ENV PATH /opt/conda/envs/py38/bin:$PATH
 
 ```
+
 ## docker中使用display
 
 在启动时需要设置环境变量DISPLAY
 
 ### win下的情况
-参考[How to use GUI apps in linux docker container from Windows Host](https://medium.com/@potatowagon/how-to-use-gui-apps-in-linux-docker-container-from-windows-host-485d3e1c64a3)
 
-[在Docker for Windows中运行GUI程序](https://www.cnblogs.com/larva-zhh/p/10531824.html)
-
+参考[在Docker for Windows中运行GUI程序](https://www.cnblogs.com/larva-zhh/p/10531824.html)
 
 
 ## 前后端项目静态资源转发
 
-
 后端 springboot时：
 把静态资源放在static目录下，然后在application中配置
+
 ```yaml
 spring:
   mvc:
@@ -199,6 +198,7 @@ spring:
 ```
 
 如果设置了拦截器，需要在拦截器上加入
+
 ```java
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
@@ -224,12 +224,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
 ```
 
 jar 包和静态路径关系
+
 ```md
 - .jar
 - static
 ```
-
-
 
 前端，需要在nginx上加入转发后访问静态路径后缀。
 
