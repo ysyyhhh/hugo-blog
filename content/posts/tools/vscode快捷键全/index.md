@@ -1,7 +1,7 @@
 ---
 title: 工作学习流(vscode快捷键)
-date: 2023-11-10
-lastmod: 2023-11-17
+date: 2023-11-18
+lastmod: 2023-11-18
 author: ['Ysyy']
 categories: ['']
 tags: ['tools']
@@ -21,6 +21,8 @@ showbreadcrumbs: True
 
 待办事项勾选/取消勾选: `alt + c`
 
+引用: `alt + q`
+
 ## terminal
 
 命令行创建: `Ctrl + Shift + ~`
@@ -28,7 +30,6 @@ showbreadcrumbs: True
 命令行切换: `Ctrl + fn + upArrow/downArrow`
 
 ## view
-
 
 ## Run
 

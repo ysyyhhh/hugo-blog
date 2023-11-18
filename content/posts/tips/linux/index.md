@@ -1,7 +1,7 @@
 ---
 title: Linux
 date: 2023-11-17
-lastmod: 2023-11-17
+lastmod: 2023-11-18
 author: ['Ysyy']
 categories: ['']
 tags: ['tips']
