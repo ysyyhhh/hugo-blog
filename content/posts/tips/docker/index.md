@@ -1,7 +1,7 @@
 ---
 title: docker相关技巧
 date: 2023-11-15
-lastmod: 2023-11-18
+lastmod: 2023-11-21
 author: ['Ysyy']
 categories: ['']
 tags: ['tips']

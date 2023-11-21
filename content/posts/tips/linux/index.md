@@ -1,7 +1,7 @@
 ---
 title: Linux
-date: 2023-11-17
-lastmod: 2023-11-18
+date: 2023-11-20
+lastmod: 2023-11-21
 author: ['Ysyy']
 categories: ['']
 tags: ['tips']
@@ -40,6 +40,54 @@ groups username
 # 修改用户组
 usermod -g groupname username
 
+# 查看所有用户
+cat /etc/passwd
+
+```
+
+## 目录挂载
+
+```shell
+
+# 查看挂载
+df -h
+
+# 挂载目录
+mount /dev/sdb1 /home/username/data
+
+# 卸载目录
+umount /home/username/data
+
+# 挂载硬盘
+## 查看硬盘
+fdisk -l
+
+## 格式化硬盘
+fdisk /dev/sdb
+
+## 格式化为ext4
+mkfs.ext4 /dev/sdb1
+
+```
+
+挂载目录并立即生效
+
+```shell
+# 挂载目录
+mount /dev/sdb1 /home/username/data
+
+# 立即生效
+mount -a
+
+```
+
+## 文件
+
+```shell
+
+# 带权限复制
+cp -rp source dest
+
 ```
 
 ## 工具
@@ -49,5 +97,18 @@ usermod -g groupname username
 ```shell
 # 下载文件
 curl -o filename url
+
+```
+
+## 系统路径/变量
+
+持久化添加/改变系统路径/变量
+
+```shell
+# 添加到系统路径
+echo 'export PATH=$PATH:/home/username/bin' >> /etc/profile
+
+# 立即生效
+source /etc/profile
 
 ```
