@@ -1,6 +1,6 @@
 ---
 title: mongoDB
-date: 2023-11-28
+date: 2023-11-30
 lastmod: 2023-11-30
 author: ['Ysyy']
 categories: ['']
@@ -37,5 +37,20 @@ db.{collection}.find()
 # 按条件查看集合数据
 ## pid=1
 db.{collection}.find({pid:1})
+
+## 限制4条
+db.{collection}.find().limit(4)
+
+## 只显示其中一个字段
+db.{collection}.find({}, {name:1})
+
+## 统计数量
+db.{collection}.find().count()
+
+## 全部删除
+db.{collection}.remove({})
+
+## 插入或更新数据
+
 
 ```
