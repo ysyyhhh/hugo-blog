@@ -1,7 +1,7 @@
 ---
 title: mongoDB
 date: 2023-11-28
-lastmod: 2023-11-29
+lastmod: 2023-11-30
 author: ['Ysyy']
 categories: ['']
 tags: ['sql']
