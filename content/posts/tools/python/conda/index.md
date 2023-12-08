@@ -1,7 +1,7 @@
 ---
 title: conda
 date: 2023-11-19
-lastmod: 2023-12-06
+lastmod: 2023-12-08
 author: ['Ysyy']
 categories: ['']
 tags: ['python']
