@@ -1,7 +1,7 @@
 ---
 title: poetry
 date: 2023-11-05
-lastmod: 2023-12-13
+lastmod: 2023-12-14
 author: ['Ysyy']
 categories: ['']
 tags: ['python']

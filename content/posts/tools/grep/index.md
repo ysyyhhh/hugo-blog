@@ -1,7 +1,7 @@
 ---
 title: grep
 date: 2023-10-17
-lastmod: 2023-12-13
+lastmod: 2023-12-14
 author: ['Ysyy']
 categories: ['']
 tags: ['tools']

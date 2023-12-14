@@ -1,7 +1,7 @@
 ---
 title: Docker命令
-date: 2023-11-07
-lastmod: 2023-12-13
+date: 2023-12-14
+lastmod: 2023-12-14
 author: ['Ysyy']
 categories: ['']
 tags: ['docker']
@@ -37,11 +37,14 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 sudo apt -y update
 
 # 安装docker
-sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 # 安装docker-compose
 
-sudo apt install docker-compose
+sudo apt install -y docker-compose
+
+
+
 
 
 

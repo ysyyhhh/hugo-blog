@@ -1,7 +1,7 @@
 ---
 title: minikube
 date: 2023-10-31
-lastmod: 2023-12-13
+lastmod: 2023-12-14
 author: ['Ysyy']
 categories: ['']
 tags: ['k8s']
