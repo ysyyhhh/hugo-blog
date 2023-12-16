@@ -1,7 +1,7 @@
 ---
 title: openai 相关QA
 date: 2023-12-08
-lastmod: 2023-12-15
+lastmod: 2023-12-16
 author: ['Ysyy']
 categories: ['']
 tags: ['python']
