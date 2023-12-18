@@ -1,7 +1,7 @@
 ---
 title: nginx
 date: 2023-12-02
-lastmod: 2023-12-17
+lastmod: 2023-12-18
 author: ['Ysyy']
 categories: ['']
 tags: ['nginx']

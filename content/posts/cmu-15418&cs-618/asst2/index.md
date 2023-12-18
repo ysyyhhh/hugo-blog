@@ -1,7 +1,7 @@
 ---
 title: asst2
-date: 2023-12-08
-lastmod: 2023-12-17
+date: 2023-12-18
+lastmod: 2023-12-18
 author: ['Ysyy']
 categories: ['']
 tags: ['cmu-15418&cs-618']
@@ -641,8 +641,46 @@ t->sync();
 // are guaranteed to have terminated
 ```
 
-如上面的注释所述，在线程调用 sync ()之前，不能保证以前调用 runAsyncWithDeps ()的任务已经完成。
+如上面的注释中所述，在线程调用sync() runAsyncWithDeps() ) 的任务已完成。 准确地说， runAsyncWithDeps()告诉您的任务系统执行新的批量任务启动，但您的实现可以灵活地在下次调用sync()之前随时执行这些任务。 请注意，此规范意味着无法保证您的实现在从 launchB 启动任务之前先执行 launchA 中的任务！
 
-确切地说，runAsyncWithDeps ()告诉您的任务系统执行新的批量任务启动，但是您的实现具有在下一次调用 sync ()之前的任何时候执行这些任务的灵活性。
+### Support for Explicit Dependencies
 
-请注意，此规范意味着不能保证您的实现在从 launchA 开始任务之前执行任务�
+runAsyncWithDeps()的第二个关键细节是它的第三个参数：TaskID 标识符向量，必须引用之前使用runAsyncWithDeps()启动的批量任务。 该向量指定当前批量任务启动中的任务所依赖的先前任务。 因此，在依赖向量中给出的启动中的所有任务完成之前，您的任务运行时无法开始执行当前批量任务启动中的任何任务！ 例如，考虑以下示例：
+
+```C++
+std::vector<TaskID> noDeps;  // empty vector
+std::vector<TaskID> depOnA;   
+std::vector<TaskID> depOnBC;   
+
+ITaskSystem *t = new TaskSystem(num_threads);
+
+TaskID launchA = t->runAsyncWithDeps(taskA, 128, noDeps);    
+depOnA.push_back(launchA);
+
+TaskID launchB = t->runAsyncWithDeps(taskB, 2, depOnA);
+TaskID launchC = t->runAsyncWithDeps(taskC, 6, depOnA);
+depOnBC.push_back(launchB);
+depOnBC.push_back(launchC);
+
+TaskID launchD = t->runAsyncWithDeps(taskD, 32, depOnBC);            
+t->sync();
+```
+
+上面的代码有四个批量任务启动（taskA：128 个任务，taskB：2 个任务，taskC：6 个任务，taskD：32 个任务）。 请注意，任务 B 和任务 C 的启动取决于任务 A。 taskD 的批量启动 ( launchD ) 取决于launchB和launchC的结果。 因此，虽然您的任务运行时可以按任意顺序（包括并行）处理与launchB和launchC关联的任务，但这些启动中的所有任务必须在launchA的任务完成后开始执行，并且它们必须在运行时开始之前完成从launchD执行任何任务。
+
+我们可以通过任务图直观地说明这些依赖关系。 任务图是有向无环图 (DAG)，其中图中的节点对应于批量任务启动，从节点 X 到节点 Y 的边表示 Y 对 X 输出的依赖关系。上述代码的任务图是：
+![Alt text](https://github.com/jeremyephron/asst2/raw/master/figs/task_graph.png)
+
+请注意，如果您在具有八个执行上下文的 Myth 计算机上运行上面的示例，则并行调度launchB和launchC中的任务的能力可能非常有用，因为单独的批量任务启动都不足以使用所有执行机器的资源。
+
+### Task
+
+您必须从 A 部分扩展任务系统实现，才能正确实现TaskSystem::runAsyncWithDeps()和TaskSystem::sync() 。 与 A 部分一样，我们为您提供以下入门提示：
+
+- It may be helpful to think about the behavior of runAsyncWithDeps() as pushing a record corresponding to the bulk task launch, or perhaps records corresponding to each of the tasks in the bulk task launch onto a "work queue". Once the record to work to do is in the queue, runAsyncWithDeps() can return to the caller.
+- The trick in this part of the assignment is performing the appropriate bookkeeping to track dependencies. What must be done when all the tasks in a bulk task launch complete? (This is the point when new tasks may become available to run.)
+- It can be helpful to have two data structures in your implementation: (1) a structure representing tasks that have been added to the system via a call to runAsyncWithDeps(), but are not yet ready to execute because they depend on tasks that are still running (these tasks are "waiting" for others to finish) and (2) a "ready queue" of tasks that are not waiting on any prior tasks to finish and can safely be run as soon as a worker thread is available to process them.
+- You need not worry about integer wrap around when generating unique task launch ids. We will not hit your task system with over 2^31 bulk task launches.
+- You can assume all programs will either call only run() or only runAsyncWithDeps(); that is, you do not need to handle the case where a run() call needs to wait for all proceeding calls to runAsyncWithDeps() to finish.
+
+在part_b/子目录中实现B部分实现，以与正确的参考实现（ part_b/runtasks_ref_* ）进行比较。
