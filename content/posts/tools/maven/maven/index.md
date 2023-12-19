@@ -1,7 +1,7 @@
 ---
 title: maven
 date: 2023-12-04
-lastmod: 2023-12-18
+lastmod: 2023-12-19
 author: ['Ysyy']
 categories: ['']
 tags: ['maven']
