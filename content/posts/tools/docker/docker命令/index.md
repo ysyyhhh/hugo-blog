@@ -1,7 +1,7 @@
 ---
 title: Docker命令
-date: 2023-12-14
-lastmod: 2023-12-27
+date: 2023-12-28
+lastmod: 2023-12-28
 author: ['Ysyy']
 categories: ['']
 tags: ['docker']
@@ -212,6 +212,21 @@ docker system prune -a --volumes --force
 
 ```
 
+## 3.容器日志
+
+```shell
+# 查看容器日志
+docker logs [选项] <容器名>
+# 选项: -f, --follow=false  # 跟踪日志输出
+#       --since=""  # 显示自某个timestamp之后的日志，或相对时间，如42m（即42分钟）
+#       --tail="all"  # 从日志末尾显示多少行日志， 默认是all
+#       -t, --timestamps=false  # 显示时间戳
+#       --until=""  # 显示自某个timestamp之前的日志，或相对时间，如42m（即42分钟）
+
+
+
+```
+
 ## docker submodule
 
 ```shell
@@ -230,9 +245,3 @@ docker-compose up [选项] [服务名]
 # 选项
 # -d 后台运行
 # --build 构建镜像
-# --force-recreate 强制重新创建容器
-# --no-deps 不启动依赖的服务
-# --no-recreate 不重新创建容器
-
-
-`

@@ -1,7 +1,7 @@
 ---
 title: 利于部署的开发规范手册
 date: 2023-10-19
-lastmod: 2023-12-27
+lastmod: 2023-12-28
 author: ['Ysyy']
 categories: ['']
 tags: ['reference']
