@@ -1,7 +1,7 @@
 ---
 title: MySql常用命令
 date: 2023-10-11
-lastmod: 2023-12-28
+lastmod: 2023-12-29
 author: ['Ysyy']
 categories: ['']
 tags: ['sql']
