@@ -1,7 +1,7 @@
 ---
 title: 工作学习流(vscode快捷键)
 date: 2023-12-08
-lastmod: 2024-01-01
+lastmod: 2024-01-02
 author: ['Ysyy']
 categories: ['']
 tags: ['tools']
