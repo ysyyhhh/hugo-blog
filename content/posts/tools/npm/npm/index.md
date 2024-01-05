@@ -1,7 +1,7 @@
 ---
 title: npm
 date: 2023-12-14
-lastmod: 2024-01-04
+lastmod: 2024-01-05
 author: ['Ysyy']
 categories: ['']
 tags: ['npm']

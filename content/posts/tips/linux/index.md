@@ -1,7 +1,7 @@
 ---
 title: Linux
-date: 2023-12-14
-lastmod: 2024-01-04
+date: 2024-01-05
+lastmod: 2024-01-05
 author: ['Ysyy']
 categories: ['']
 tags: ['tips']
@@ -40,6 +40,15 @@ cat /etc/os-release
 # 查看系统信息
 uname -a
 
+
+# 列出所有文件夹和文件 显示占用空间
+du -sh *
+
+# 查看文件夹大小
+du -sh folder_name
+
+# 查看文件大小
+du -sh file_name
 
 ```
 
@@ -120,6 +129,11 @@ cp -rp source dest
 
 ## 工具
 
+### 定时脚本
+```shell
+# 查看定时脚本
+crontab -l
+```
 ### curl
 
 ```shell
@@ -159,4 +173,4 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
 
 # 更新源
-sudo apt update
+s
