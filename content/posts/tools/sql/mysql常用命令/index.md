@@ -1,7 +1,7 @@
 ---
 title: MySql常用命令
-date: 2023-10-11
-lastmod: 2024-01-05
+date: 2024-01-06
+lastmod: 2024-01-06
 author: ['Ysyy']
 categories: ['']
 tags: ['sql']
@@ -62,4 +62,26 @@ ALTER TABLE 表名 AUTO_INCREMENT = 1;
 
 ```
 source
+```
+
+
+#### 表
+
+```sql
+# 添加一列
+alter table 表名 add column 列名 类型;
+
+
+```
+
+#### 数据
+
+```sql
+
+# 插入数据
+insert into 表名 (字段1,字段2) values (值1,值2);
+
+
+# 更新数据
+update 表名 set 字段1=值1,字段2=值2 where 条件;
 ```
