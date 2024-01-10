@@ -1,7 +1,7 @@
 ---
 title: Docker命令
-date: 2023-12-28
-lastmod: 2024-01-08
+date: 2024-01-10
+lastmod: 2024-01-10
 author: ['Ysyy']
 categories: ['']
 tags: ['docker']
@@ -245,3 +245,16 @@ docker-compose up [选项] [服务名]
 # 选项
 # -d 后台运行
 # --build 构建镜像
+```
+
+
+
+## docker私服的相关命令
+
+```shell
+# 登录
+docker login [选项] [服务器地址]
+
+# 查看当前命名空间
+docker namespace ls
+```
