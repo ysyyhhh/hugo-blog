@@ -1,7 +1,7 @@
 ---
 title: Docker命令
 date: 2024-01-10
-lastmod: 2024-01-10
+lastmod: 2024-01-11
 author: ['Ysyy']
 categories: ['']
 tags: ['docker']
@@ -53,6 +53,16 @@ sudo apt install -y docker-compose
 ## 1.镜像相关
 
 ```shell
+# 构建镜像
+docker build [选项] <上下文路径/URL/->
+# 选项: -f, --file=""  # 指定要使用的Dockerfile路径（默认为./Dockerfile）
+#       --force-rm=false  # 在构建过程中删除中间容器
+#       --no-cache=false  # 始终使用缓存
+#       --pull=false  # 在构建过程中尝试去更新镜像的新版本
+#       --quiet=false  # 安静模式，成功后只输出镜像ID
+#       --rm=true  # 在构建成功后删除临时容器
+#       -t, --tag=[]  # 镜像名称（默认值：<上下文路径>的基本名称）
+#       --ulimit=[]  # Ulimit配置
 
 # 拉取镜像
 docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]
@@ -253,8 +263,7 @@ docker-compose up [选项] [服务名]
 
 ```shell
 # 登录
-docker login [选项] [服务器地址]
+docker login 
 
-# 查看当前命名空间
-docker namespace ls
-```
+# 上传
+docker push <镜像名>
