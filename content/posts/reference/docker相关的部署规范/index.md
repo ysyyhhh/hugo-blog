@@ -1,7 +1,7 @@
 ---
 title: docker 相关的部署规范
 date: 2024-01-10
-lastmod: 2024-01-11
+lastmod: 2024-01-13
 author: ['Ysyy']
 categories: ['']
 tags: ['reference']
