@@ -1,7 +1,7 @@
 ---
 title: Linux
-date: 2024-01-05
-lastmod: 2024-01-16
+date: 2024-01-16
+lastmod: 2024-01-19
 author: ['Ysyy']
 categories: ['']
 tags: ['tips']
@@ -125,10 +125,23 @@ mount -a
 # 带权限复制
 cp -rp source dest
 
+# 远程连接复制文件
+scp -r username@ip:/home/username/data /home/username/data
+
 ```
 
 ## 工具
 
+### 压缩解压缩
+```shell
+# 压缩
+tar -czvf filename.tar.gz foldername
+
+# 解压
+tar -xzvf filename.tar.gz
+```
+
+```
 ### 定时脚本
 ```shell
 # 查看定时脚本
@@ -174,3 +187,4 @@ sudo sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sourc
 
 # 更新源
 s
+```
