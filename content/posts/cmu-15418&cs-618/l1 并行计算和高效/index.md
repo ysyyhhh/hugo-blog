@@ -1,7 +1,7 @@
 ---
 title: Why parallelism? Why efficiency?
 date: 2023-10-05
-lastmod: 2024-01-19
+lastmod: 2024-01-20
 author: ['Ysyy']
 categories: ['']
 tags: ['cmu-15418&cs-618']
