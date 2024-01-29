@@ -1,7 +1,7 @@
 ---
 title: 部署手册
 date: 2024-01-16
-lastmod: 2024-01-25
+lastmod: 2024-01-29
 author: ['Ysyy']
 categories: ['']
 tags: ['reference']

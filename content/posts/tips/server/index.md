@@ -1,10 +1,10 @@
 ---
-title: L7
-date: 2023-10-18
+title: 服务器
+date: 2024-01-28
 lastmod: 2024-01-29
 author: ['Ysyy']
 categories: ['']
-tags: ['cmu-15418&cs-618']
+tags: ['tips']
 description: 
 weight: None
 draft: False
@@ -15,10 +15,11 @@ hidemeta: False
 disableShare: False
 showbreadcrumbs: True
 ---
-GPU
+## scp传输文件
+```shell
 
-## 图形渲染
+# 本地到远程
+scp -r /home/username/data username@ip:/home/username/data
 
-![](img/2023-10-18-22-45-21.png)
 
-图像中的每个对象都有很自然的并行性。
+```
