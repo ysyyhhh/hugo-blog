@@ -1,7 +1,7 @@
 ---
 title: git
 date: 2024-01-05
-lastmod: 2024-01-29
+lastmod: 2024-01-30
 author: ['Ysyy']
 categories: ['']
 tags: ['git']
