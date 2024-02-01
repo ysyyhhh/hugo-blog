@@ -1,7 +1,7 @@
 ---
 title: 命令行
 date: 2024-01-30
-lastmod: 2024-01-31
+lastmod: 2024-02-01
 author: ['Ysyy']
 categories: ['']
 tags: ['shell']
