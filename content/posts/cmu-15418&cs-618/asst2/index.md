@@ -1,7 +1,7 @@
 ---
 title: asst2
 date: 2023-12-18
-lastmod: 2024-02-03
+lastmod: 2024-02-04
 author: ['Ysyy']
 categories: ['']
 tags: ['cmu-15418&cs-618']
