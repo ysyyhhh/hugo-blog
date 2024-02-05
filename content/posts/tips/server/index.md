@@ -1,7 +1,7 @@
 ---
 title: 服务器
 date: 2024-01-28
-lastmod: 2024-02-04
+lastmod: 2024-02-05
 author: ['Ysyy']
 categories: ['']
 tags: ['tips']
