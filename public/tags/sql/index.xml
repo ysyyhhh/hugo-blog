@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sql on ysyy&#39;s blog</title>
+    <link>/tags/sql/</link>
+    <description>Recent content in sql on ysyy&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 21 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySql常用命令</title>
+      <link>/posts/tools/sql/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sun, 07 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/posts/tools/sql/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>修改用户密码 alter user &amp;#39;root&amp;#39;@&amp;#39;localhost&amp;#39; identified with mysql_native_password by &amp;#39;123456&amp;#39;; 刷新权限 flush privileges; 添加一个远程用户 create user &amp;#39;remote&amp;#39;@&amp;#39;%&amp;#39; identified by &amp;#39;password&amp;#39; GRANT all ON *.* TO &amp;#39;remote&amp;#39;@&amp;#39;%&amp;#39;; grant all privileges on *.* to &amp;#39;remote&amp;#39;@&amp;#39;%&amp;#39; with grant option; *.*所有数据库下的所有表 创建数据库并设</description>
+    </item>
+    <item>
+      <title>mongoDB</title>
+      <link>/posts/tools/sql/mongodb/</link>
+      <pubDate>Thu, 30 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>/posts/tools/sql/mongodb/</guid>
+      <description>常用命令 # 连接 mongosh ip[:port]/database -u username -p password # 查看数据库 show dbs # 切换数据库 use database # 查看集合 show collections # file # 查看集合数据 db.{collection}.find() # 按条件查看集合数据 ## pid=1 db.{collection}.find({pid:1}) ## 限制4条 db.{collection}.find().limit(4) ## 只显示其</description>
+    </item>
+  </channel>
+</rss>

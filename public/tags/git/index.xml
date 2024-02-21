@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on ysyy&#39;s blog</title>
+    <link>/tags/git/</link>
+    <description>Recent content in git on ysyy&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 21 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git</title>
+      <link>/posts/tools/git/git/</link>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/posts/tools/git/git/</guid>
+      <description>git 常用命令 git 基本配置 git config --global user.name &amp;#34;your name&amp;#34; git config --global user.email &amp;#34;your email&amp;#34; git 基本操作 git init # 初始化仓库 git add . # 添加所有文件到暂存区 git commit -m &amp;#34;commit message&amp;#34; # 提交到本地仓库 git remote add origin git push -u origin</description>
+    </item>
+  </channel>
+</rss>

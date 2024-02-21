@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tips on ysyy&#39;s blog</title>
+    <link>/tags/tips/</link>
+    <description>Recent content in tips on ysyy&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 21 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/tips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>服务器</title>
+      <link>/posts/tips/server/</link>
+      <pubDate>Sun, 28 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/posts/tips/server/</guid>
+      <description>scp传输文件 # 本地到远程 scp -r /home/username/data username@ip:/home/username/data</description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>/posts/tips/linux/</link>
+      <pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/posts/tips/linux/</guid>
+      <description>系统资源相关 # 查看内存 free -h # 查看cpu cat /proc/cpuinfo # 查看cpu使用情况 top # 查看GPU使用情况 nvidia-smi # 查看磁盘 df -h # 查看系统版本 cat /etc/os-release # 查看系统信息 uname -a # 列</description>
+    </item>
+    <item>
+      <title>windows 下的子系统</title>
+      <link>/posts/tips/windows%E4%B8%8B%E7%9A%84%E5%AD%90%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/posts/tips/windows%E4%B8%8B%E7%9A%84%E5%AD%90%E7%B3%BB%E7%BB%9F/</guid>
+      <description>wsl pass 适用于Android的Windows子系统</description>
+    </item>
+    <item>
+      <title>docker相关技巧</title>
+      <link>/posts/tips/docker/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>/posts/tips/docker/</guid>
+      <description>记把深度学习项目装入docker 安装时出现选项 # RUN apt-get install libglib2.0-dev -y # 由于安装libglib2.0-dev的时候，bash会有交互操作叫你选择对应的时</description>
+    </item>
+  </channel>
+</rss>

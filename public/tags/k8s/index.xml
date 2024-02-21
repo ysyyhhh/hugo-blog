@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>k8s on ysyy&#39;s blog</title>
+    <link>/tags/k8s/</link>
+    <description>Recent content in k8s on ysyy&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 21 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>minikube</title>
+      <link>/posts/tools/k8s/minikube/</link>
+      <pubDate>Tue, 31 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>/posts/tools/k8s/minikube/</guid>
+      <description>使用 进入pods的容器 kubectl exec -it &amp;lt;pod-name&amp;gt; -c &amp;lt;container-name&amp;gt; -- /bin/bash # 查看对应容器的日志 kubectl logs -f &amp;lt;pod-name&amp;gt; -c &amp;lt;container-name&amp;gt; 错误和解决方案 minikube 挂载 本地目录进minikube时,作为mysql的数据</description>
+    </item>
+  </channel>
+</rss>

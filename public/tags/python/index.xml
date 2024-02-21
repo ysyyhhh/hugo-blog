@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on ysyy&#39;s blog</title>
+    <link>/tags/python/</link>
+    <description>Recent content in python on ysyy&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 21 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>openai 相关QA</title>
+      <link>/posts/qa/python/openai/</link>
+      <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/posts/qa/python/openai/</guid>
+      <description>无法连接 Q: openai.error.APIConnectionError: Error communicating with OpenAI: HTTPSConnectionPool(host=&amp;#39;api.openai.com&amp;#39;, port=443): Max retries exceeded with url: /v1/chat/completions (Caused by ProxyError(&amp;#39;Unable to connect to proxy&amp;#39;, SSLError(SSLZeroReturnError(6, &amp;#39;TLS/SSL connection has been closed (EOF) (_ssl.c:1131)&amp;#39;)))) A: 问题出在模块 urllib3 的版本，报错的是 1.26.3，没报错的是 1.25.11 在原报错环境中使</description>
+    </item>
+    <item>
+      <title>conda</title>
+      <link>/posts/tools/python/conda/</link>
+      <pubDate>Sun, 19 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>/posts/tools/python/conda/</guid>
+      <description># 查看环境 conda env list # 创建环境 conda create -n py3 python=3.6 # 通过yml文件创建环境 conda env create -f environment.yml # 激活环境 conda activate py3 # 退出环境 conda deactivate # 删除环境 conda remove -n py3 --all 迁移时可能会出现pi</description>
+    </item>
+    <item>
+      <title>poetry</title>
+      <link>/posts/tools/python/poetry/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>/posts/tools/python/poetry/</guid>
+      <description>poetry 出现的错误及解决方法 poetry install 时Failed to create the collection: Prompt dismissed 解决方案: 关闭keyring python3 -m keyring --disable 原因: https://github.com/python-poetry/poetry/issues/1917</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tools on ysyy&#39;s blog</title>
+    <link>/tags/tools/</link>
+    <description>Recent content in tools on ysyy&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 21 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>工作学习流(vscode快捷键)</title>
+      <link>/posts/tools/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%85%A8/</link>
+      <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/posts/tools/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%85%A8/</guid>
+      <description>markdown 快捷键 删除线: alt + s 待办事项勾选/取消勾选: alt + c terminal 命令行创建: Ctrl + Shift + ~ 命令行切换: Ctrl + fn + upArrow/downArrow view Run Run python file in terminal: Ctrl + F5</description>
+    </item>
+    <item>
+      <title>grep</title>
+      <link>/posts/tools/grep/</link>
+      <pubDate>Tue, 17 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>/posts/tools/grep/</guid>
+      <description>grep工具</description>
+    </item>
+    <item>
+      <title>用Hugo &#43; Github Pages/Action &#43; py &#43; 任务计划程序 搭建 全自动化markdown笔记转博客</title>
+      <link>/posts/tools/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Fri, 29 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>/posts/tools/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
+      <description>TL;DR 背景: 已使用nextcloud和typora写笔记 需求: 将笔记转换为博客.(且因为本人太懒,😂 所以需要全自动化) 在nextcloud中, 专</description>
+    </item>
+  </channel>
+</rss>
