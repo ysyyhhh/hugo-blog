@@ -1,7 +1,7 @@
 ---
 title: Linux
 date: 2024-01-16
-lastmod: 2024-02-05
+lastmod: 2024-02-21
 author: ['Ysyy']
 categories: ['']
 tags: ['tips']

@@ -1,7 +1,7 @@
 ---
 title: nginx
-date: 2023-12-02
-lastmod: 2024-02-05
+date: 2024-02-20
+lastmod: 2024-02-21
 author: ['Ysyy']
 categories: ['']
 tags: ['nginx']
@@ -37,4 +37,21 @@ mkdir -p /data/nginx/cache
 
 # 2. 修改目录权限
 chown -R nginx:nginx /data/nginx/cache
+```
+
+
+## nginx 命令
+
+```shell
+# 启动
+nginx
+
+# 重启, 重新加载配置文件
+nginx -s reload
+
+# 停止
+nginx -s stop
+
+# 测试配置文件是否正确
+nginx -t
 ```

@@ -1,7 +1,7 @@
 ---
 title: windows 下的子系统
 date: 2023-12-31
-lastmod: 2024-02-05
+lastmod: 2024-02-21
 author: ['Ysyy']
 categories: ['']
 tags: ['tips']

@@ -1,7 +1,7 @@
 ---
 title: 部署手册
-date: 2024-01-16
-lastmod: 2024-02-05
+date: 2024-02-07
+lastmod: 2024-02-21
 author: ['Ysyy']
 categories: ['']
 tags: ['reference']
@@ -15,6 +15,16 @@ hidemeta: False
 disableShare: False
 showbreadcrumbs: True
 ---
+## docker 镜像上传到私有仓库
+
+```shell
+docker login -u username -p password registry.cn-hangzhou.aliyuncs.com
+
+docker tag image registry.cn-hangzhou.aliyuncs.com/username/image:tag
+
+docker push registry.cn-hangzhou.aliyuncs.com/username/image:tag
+```
+
 ## Server
 ### SpringBoot 
 

@@ -1,7 +1,7 @@
 ---
 title: Docker命令
-date: 2024-01-16
-lastmod: 2024-02-05
+date: 2024-02-05
+lastmod: 2024-02-21
 author: ['Ysyy']
 categories: ['']
 tags: ['docker']
@@ -44,11 +44,13 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo apt install -y docker-compose
 
 
-
-
-
-
 ```
+
+centos 6.9 下安装docker
+
+https://medium.com/@zihansyu/centos-6-x-%E5%AE%89%E8%A3%9Ddocker-9e61354fd2ae
+
+https://blog.csdn.net/kinginblue/article/details/73527832
 
 ## 1.镜像相关
 
