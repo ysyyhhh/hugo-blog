@@ -1,7 +1,7 @@
 ---
 title: MySql常用命令
-date: 2024-01-07
-lastmod: 2024-02-22
+date: 2024-02-23
+lastmod: 2024-02-23
 author: ['Ysyy']
 categories: ['']
 tags: ['sql']
@@ -15,10 +15,17 @@ hidemeta: False
 disableShare: False
 showbreadcrumbs: True
 ---
-##### 修改用户密码
+##### 修改用户
 
+修改密码
 ```
 alter user 'root'@'localhost' identified with mysql_native_password by '123456';
+```
+
+修改用户host
+
+```sql
+update mysql.user set host = '%' where user = 'root
 ```
 
 ##### 刷新权限
@@ -35,6 +42,12 @@ GRANT all ON *.* TO 'remote'@'%';
 grant all privileges on *.* to 'remote'@'%' with grant option;
 
 *.*所有数据库下的所有表
+```
+
+##### 删除用户
+
+```
+drop user 'remote'@'%';
 ```
 
 ##### 创建数据库并设定中文编码
@@ -64,6 +77,13 @@ ALTER TABLE 表名 AUTO_INCREMENT = 1;
 source
 ```
 
+#### 数据库
+
+设置数据库的字符集
+
+```sql
+alter database 数据库名 character set utf8;
+```
 
 #### 表
 
@@ -73,6 +93,8 @@ alter table 表名 add column 列名 类型;
 
 
 ```
+
+
 
 #### 数据
 
