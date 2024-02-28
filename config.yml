@@ -1,4 +1,4 @@
-baseURL: "http://localhost/"
+baseURL: "https://ysyyhhh.github.io/"
 title: ysyy's blog
 theme: PaperMod
 languageCode: zh
@@ -20,7 +20,7 @@ paginate: 15    # 首页每页显示的文章数
 
 minify:
     disableXML: true
-    # minifyOutput: true
+    minifyOutput: true
 
 permalinks:
   post: "/:title/"
