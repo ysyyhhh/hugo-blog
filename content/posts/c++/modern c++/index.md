@@ -1,7 +1,7 @@
 ---
 title: Modern C++
 date: 2023-11-05
-lastmod: 2024-02-27
+lastmod: 2024-02-28
 author: ['Ysyy']
 categories: ['']
 tags: ['c++']

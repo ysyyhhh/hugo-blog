@@ -1,7 +1,7 @@
 ---
 title: L5 Work distribution and scheduling
 date: 2023-10-16
-lastmod: 2024-02-27
+lastmod: 2024-02-28
 author: ['Ysyy']
 categories: ['']
 tags: ['cmu-15418&cs-618']
