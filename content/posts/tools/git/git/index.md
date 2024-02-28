@@ -1,6 +1,6 @@
 ---
 title: git
-date: 2024-01-05
+date: 2024-02-28
 lastmod: 2024-02-28
 author: ['Ysyy']
 categories: ['']
@@ -80,6 +80,10 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 ### git 子模块
 
 ```bash
+
+# 查看子模块
+git submodule
+
 git submodule add # 添加子模块
 
 # 添加子模块并自定义子模块目录名称和分支
