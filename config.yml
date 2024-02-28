@@ -1,4 +1,4 @@
-baseURL: ''
+baseURL: "http://localhost/"
 title: ysyy's blog
 theme: PaperMod
 languageCode: zh
