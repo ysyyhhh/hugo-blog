@@ -1,10 +1,10 @@
 ---
 title: redis
-date: 2023-04-16
+date: 2024-03-01
 lastmod: 2024-03-01
 author: ['Ysyy']
 categories: ['']
-tags: ['spring']
+tags: ['sql']
 description: 
 weight: None
 draft: False

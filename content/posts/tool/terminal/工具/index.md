@@ -1,6 +1,6 @@
 ---
 title: 工具
-date: 2023-08-07
+date: 2024-03-01
 lastmod: 2024-03-01
 author: ['Ysyy']
 categories: ['']
@@ -15,6 +15,23 @@ hidemeta: False
 disableShare: False
 showbreadcrumbs: True
 ---
+## 下载文件
+
+### wget
+
+```shell
+
+wget -c -t 0 -T 60 -O 文件名 下载地址
+# -c 断点续传
+# -t 0 重试次数
+# -T 60 超时时间
+# -O 文件名 保存文件名
+
+```
+
+
+## tree指令在windows下
+
 <https://blog.csdn.net/pyufftj/article/details/83102530>
 
 <https://blog.csdn.net/fragrant_no1/article/details/85986511>
