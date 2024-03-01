@@ -1,7 +1,7 @@
 ---
 title: 大语言模型原理
-date: 2024-02-29
-lastmod: 2024-02-29
+date: 2024-03-01
+lastmod: 2024-03-01
 author: ['Ysyy']
 categories: ['']
 tags: ['llm']
