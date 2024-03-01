@@ -1,6 +1,6 @@
 ---
-title: **[kubectl](https://kubernetes.io/zh-cn/docs/reference/kubectl/) 命令行工具**
-date: 2023-08-02
+title: k8s
+date: 2024-03-01
 lastmod: 2024-03-01
 author: ['Ysyy']
 categories: ['']
@@ -15,6 +15,8 @@ hidemeta: False
 disableShare: False
 showbreadcrumbs: True
 ---
+**[kubectl](https://kubernetes.io/zh-cn/docs/reference/kubectl/) 命令行工具**
+
 kubectl [command] [TYPE] [NAME] [flags]
 
 \- `command`：指定要对一个或多个资源执行的操作，例如 `create`、`get`、`describe`、`delete`。
