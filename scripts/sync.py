@@ -1,7 +1,7 @@
 """
 每天定时更新博客内容
 1.进入项目根目录: D:/program_about/hugo/hugo-blog
-2. 将D:/nextcloud/笔记/下的文件同步到 ./content/posts/下
+2. 将D:/nextclou/Public/下的文件同步到 ./content/posts/下
 3. 执行./push.bat 或 git add . && git commit -m "update" && git push
 
 同步时的更改:

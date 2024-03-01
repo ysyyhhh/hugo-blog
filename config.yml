@@ -41,23 +41,23 @@ menu:
       weight: 2
     - identifier: posts
       name: 📚 文章
-      url: posts
+      url: /posts/
       weight: 3
     - identifier: tags
       name: 🧩 标签
-      url: tags
+      url: /tags/
       weight: 15
     - identifier: archives
       name: ⏱️ 时间轴
-      url: archives/
+      url: /archives/
       weight: 20
     - identifier: about
       name: 🙋🏻‍♂️ 关于
-      url: about
+      url: /about/
       weight: 50
     - identifier: links
       name: 🤝 友链
-      url: links
+      url: /links/
       weight: 60
 
 outputs:
@@ -116,23 +116,23 @@ params:
 
   socialIcons:
     - name: github
-      url: "https://github.com/xyming108"
-    - name: twitter
-      url: "img/twitter.png"
-    - name: facebook
-      url: "https://www.facebook.com/profile.php?id=100027782410997"
-    - name: instagram
-      url: "img/instagram.png"
-    - name: QQ
-      url: "img/qq.png"
-    - name: WeChat
-      url: "img/wechat.png"
-    - name: bilibili
-      url: "https://space.bilibili.com/234461224"
+      url: "https://github.com/ysyyhhh"
+    # - name: twitter
+    #   url: "img/twitter.png"
+    # - name: facebook
+      # url: "https://www.facebook.com/profile.php?id=100027782410997"
+    # - name: instagram
+      # url: "img/instagram.png"
+    # - name: QQ
+      # url: "img/qq.png"
+    # - name: WeChat
+      # url: "img/wechat.png"
+    # - name: bilibili
+      # url: "https://space.bilibili.com/234461224"
     - name: email
-      url: "mailto:1931559710@qq.com"
+      url: "mailto:ysyyhhhhh@gmail.com"
     - name: RSS
-      url: "index.xml"
+      url: "https://ysyyhhh.github.io/index.xml"
 
   label: # 左上角图标
     text: "Ysyy's Blog"
